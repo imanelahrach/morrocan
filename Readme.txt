@@ -1,6 +1,5 @@
-Thanks for downloading this template!
-
-Template Name: Gp
-Template URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/
-Author: BootstrapMade.com
-License: https://bootstrapmade.com/license/
+git init 
+git add .
+git commit -m "first commit"
+git remote add origin ""
+git push -u origin ""
