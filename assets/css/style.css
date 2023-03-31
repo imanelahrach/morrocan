@@ -622,6 +622,133 @@ section {
 .clients .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #ec90d8;
 }
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	font-family: sans-serif;
+	font-size: 16px;
+	display: grid;
+	place-items: center center;
+	width: 100%;
+	height: 100vh;
+}
+
+.icon {
+	width: 1em;
+	height: 1em;
+	display: inline-block;
+	fill: currentcolor;
+}
+
+.card-wrapper {
+	position: relative;
+}
+
+.card-item {
+	width: auto;
+	height: auto;
+	position: relative;
+	border-radius: 32px;
+	overflow: hidden;
+  background-image: linear-gradient(to bottom right, #7D4E57, #4F2A4D);
+
+}
+
+.card-item:hover .card-image:after {
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.9) 100%);
+}
+
+.card-item:hover .card-image img {
+	transform: scale(1.03);
+}
+
+.card-image {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+
+.card-image:after {
+	content: "";
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: absolute;
+	top: 0;
+	background: rgb(0, 0, 0);
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.7) 72%, rgba(0, 0, 0, 0.9) 100%);
+}
+
+.card-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: 0.4s;
+}
+
+.card-content {
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	padding: 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	row-gap: 20px;
+}
+
+.card-tags {
+	padding: 10px 20px;
+	background-color: #ff099f;
+	border-radius: 100px;
+	color: #fff;
+	font-size: px;
+	width: auto;
+	letter-spacing: 0.6px;
+  display: inline-block; text-align: center;
+}
+
+.card-title {
+	font-size: 22px;
+	color: #fff;
+	font-weight: bold;
+	line-height: 1.4;
+}
+
+.card-footer {
+	display: flex;
+	align-items: center;
+	column-gap: 20px;
+	font-size: 12px;
+	color: #fff;
+}
+
+.card-user-img {
+	width: 36px;
+	height: 36px;
+	min-width: 36px;
+	max-width: 36px;
+	overflow: hidden;
+	border-radius: 100px;
+}
+
+.card-user-img img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
 
 #hero {
   background-image: linear-gradient(to bottom right, #d8b0f7, #FF3D6C);
@@ -1316,10 +1443,10 @@ section {
   margin-top: 25px;
 }
 
-.contact .php-email-form .sent-message {
+.contact .php-email-form .show-message {
   display: none;
   color: #fff;
-  background: #18d26e;
+  background: #9da6f7;
   text-align: center;
   padding: 15px;
   font-weight: 600;
@@ -1332,6 +1459,95 @@ section {
   padding: 15px;
 }
 
+ /* Customize the form and its elements */
+      .php-email-form {
+        background-color: #f8f9fa;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
+      }
+      
+      .php-email-form:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      }
+      
+      .form-control {
+        background-color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
+      }
+      
+      .form-control:focus {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      
+      .btn-primary {
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
+      }
+      
+      .btn-primary:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      
+      .php-email-form {
+        border: 1px solid #ced4da;
+        padding: 20px;
+      }
+      
+      .form-control {
+        border: 1px solid #ced4da;
+      }
+      
+      .textarea {
+        border: 1px solid #ced4da;
+      }
+      
+      button[type="submit"] {
+        border: none;
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 5px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+      
+      button[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+      
+      /* Add a custom spinner */
+      .spinner-border {
+        display: inline-block;
+        width: 1.5rem;
+        height: 1.5rem;
+        vertical-align: text-bottom;
+        border: .25em solid currentColor;
+        border-right-color: transparent;
+        border-radius: 50%;
+        -webkit-animation: spinner-border .75s linear infinite;
+        animation: spinner-border .75s linear infinite;
+      }
+      
+      @-webkit-keyframes spinner-border {
+        to { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+      }
+      
+      @keyframes spinner-border {
+        to { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+      }
 .contact .php-email-form .loading:before {
   content: "";
   display: inline-block;
