@@ -67,6 +67,11 @@ h6 {
   visibility: visible;
   opacity: 1;
 }
+#footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 /*--------------------------------------------------------------
 # Preloader
@@ -650,14 +655,22 @@ body {
 
 .card-wrapper {
 	position: relative;
+  
 }
 
+
+.card
+{
+  border: none;
+ 
+}
 .card-item {
 	width: auto;
-	height: auto;
+  height: auto;
 	position: relative;
 	border-radius: 32px;
 	overflow: hidden;
+  
   background-image: linear-gradient(to bottom right, #7D4E57, #4F2A4D);
 
 }
@@ -675,6 +688,7 @@ body {
 	height: 100%;
 	overflow: hidden;
 	position: relative;
+  
 }
 
 .card-image:after {
@@ -694,6 +708,7 @@ body {
 	object-fit: cover;
 	transition: 0.4s;
 }
+
 
 .card-content {
 	width: 100%;
@@ -1527,6 +1542,45 @@ body {
       button[type="submit"]:hover {
         background-color: #3e8e41;
       }
+
+      /* Define the animation for the zoom-out effect */
+@keyframes zoom-out {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+/* Apply the animation to the element */
+.animation-element {
+  animation: zoom-out 0.5s ease-in-out;
+}
+
+/* Set the delay for each element to create the staggered effect */
+.animation-element:nth-child(1) {
+  animation-delay: 0s;
+}
+.animation-element:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.animation-element:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* Show the elements after the animation is complete */
+.animation-element:nth-child(1),
+.animation-element:nth-child(2),
+.animation-element:nth-child(3) {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Hide the elements before the animation starts */
+.animation-element {
+  opacity: 0;
+}
       
       /* Add a custom spinner */
       .spinner-border {
@@ -1675,6 +1729,7 @@ body {
   padding: 0 0 30px 0;
   color: #fff;
   font-size: 14px;
+  width: 100%;
 }
 
 #footer .footer-top {

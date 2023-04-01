@@ -31,3 +31,12 @@ form.addEventListener('submit', (e) => {
   
   });
 });
+window.addEventListener('scroll', function() {
+  const services = document.querySelector('#services');
+  const servicesPosition = services.getBoundingClientRect().top;
+  const screenPosition = window.innerHeight / 1.2;
+
+  if (servicesPosition < screenPosition) {
+    services.classList.add('fade-in');
+  }
+});
